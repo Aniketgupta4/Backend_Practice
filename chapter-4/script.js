@@ -1,4 +1,4 @@
-// create server
+// server
 
 
 
@@ -123,25 +123,63 @@
 //                           client1 client2 client3 client4
 //              -> **** so ip + port ko dekhega and uniquely identiy karega and uske hisab se response dega
 // 
-//           -> socket -> ip + port -> isme ek ek karke req aayegi and server usse process karega and response dega -> problem in real time chat application -> so web socket ka use karte hai
+//              -> ** socket -> ip + port -> isme ek ek karke req aayegi and server usse process karega and response dega -> problem in real time chat application -> so web socket ka use karte hai
 //                                  -> in client server me data exchange hota hai -> jisme client request bhejta hai and server response deta hai -> so time waste hota hai -> so real time me data exchange ni hota hai -> bar bar puchega msg aya ki ni            
 //
-//          -> ** web socket(2 way communication) -> ek aisa protocol hai jisme data real time me send and receive hota hai -> jisme data real time me send and receive hota hai usse web socket kehte hai -> web socket me data real time me send and receive hota hai -> so web socket me data real time me send and receive hota hai
+//              -> ** web socket(2 way communication) -> ek aisa protocol hai jisme data real time me send and receive hota hai -> jisme data real time me send and receive hota hai usse web socket kehte hai -> web socket me data real time me send and receive hota hai -> so web socket me data real time me send and receive hota hai
 // 
 // 
 // 
 // 
-//        
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
+//             5) create server by node.js in our device -> listen karega in port -> req aayegi -> process karega -> response dega      
+//                   -> host yahi pe kar shakte hai node provide facility but locally host hoga(access in web browser by -> localhost:4000) -> in console write -> node index.js
+//                   -> node.js provide http module to create server
+
+
+
+
+// const http = require('http');
+
+// const server = http.createServer((req,res)=>{        // response object
+//     res.end("hello from server");
+// });  
+
+// server.listen(4000,()=>{                              // server is listening on port 5000
+//     console.log("server is listening on port 4000");
+// });  
+
+
+////////////          ////////////////
+// browser             localhost:4000
+// req    ->            server
+//        <-           response 
+//hello from server
+////////////          ////////////////
+
+
+// routing
+
+const http = require('http');
+
+const server = http.createServer((req,res)=>{        // response object
+    if(req.url=="/"){
+        res.end("hello from home page");
+    }
+    else if(req.url=="/contact"){
+        res.end("hello from contact page");
+    }
+    else if(req.url=="/about"){
+        res.end("hello from about page");
+    }
+    else{
+        res.end("404 page not found");
+    }
+});  
+
+server.listen(4000,()=>{                              // server is listening on port 5000
+    console.log("server is listening on port 4000");
+}); 
+
+
+
+// **** we use express js to create server and routing is very easy in express js -> beacuse express js is a framework of node js -> so we use express js to create server and routing is very easy in express js
