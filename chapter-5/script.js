@@ -1,4 +1,4 @@
-//     op session
+//     monolithic and microservices session
 //
 //     ex: 1) uber -> new work hota rehta hai -> so new people ki need hoti hai
 //
@@ -89,7 +89,11 @@
 //                 -> ** choti team hai -> app less people use simple hai sab -> so use monolithic -> ki ek sath sab deploy karo -> scale karna is difficult
 //                 -> ** microservice is best -> jitna resource chaiye utha hi use hoga 
 // 
-// -> difference
+//
+//
+//
+//
+//   -> 5) difference between monolithic and microservices
 //
 //   Feature    	Monolithic	               Microservices
 // Structure 	Single, unified codebase	  Multiple independent services
@@ -102,21 +106,3 @@
 // Best for	    Small/medium applications	   Large, complex applications
 // 
 // 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-//
-//
-//
-//
