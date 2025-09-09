@@ -83,13 +83,23 @@
 //                   -> microservice architecture mai alag alag service hoti hai -> so har service alag alag language pe likh shakte hai -> ex: frontend react , backend nodejs , db mongodb , auth firebase , payment stripe , images cloudinary
 //                   -> ** isliye microservice architecture ko prefer karte hai -> team banti hai different different service ke liye -> and ye sab api ke through connect karte hi ek dushre se
 // 
+//               -> **** 2 chiz ek dushre se connect karte hai -> by api -> different different serivce ko connect karti hai -> way to talk 2 different service 
 // 
 // 
+//                 -> ** choti team hai -> app less people use simple hai sab -> so use monolithic -> ki ek sath sab deploy karo -> scale karna is difficult
+//                 -> ** microservice is best -> jitna resource chaiye utha hi use hoga 
 // 
-// 
-// 
-// 
-// 
+// -> difference
+//
+//   Feature    	Monolithic	               Microservices
+// Structure 	Single, unified codebase	  Multiple independent services
+// Coupling  	Tightly coupled	              Loosely coupled
+// Database	    Usually one shared DB	      Each service may have its own
+// Scalability	Whole app must be scaled	  Scale only needed services
+// Deployment	One big deployment          	Independent deployments
+// Tech Stack	Usually one	                     Can mix multiple
+// Complexity	Simple (small apps)	          Complex (needs infra support)
+// Best for	    Small/medium applications	   Large, complex applications
 // 
 // 
 // 
