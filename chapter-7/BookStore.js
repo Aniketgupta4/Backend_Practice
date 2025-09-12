@@ -2,6 +2,7 @@
 // **** app.get app.post app.patch app.put app.delete se alag type se work karengai
 // **** so app.use pe "/" niche likho -> kyuki ye sochta hai ki "/.../" iske ander nested check hoga and all -> so confusing only prefix match
 // **** app.get wagera full match "/.." karenga and work karega
+// basically app.use kisi ko bhi use kar shakta hai -> get post patch put
 
 const express = require("express")
 const app = express(); 
@@ -15,6 +16,7 @@ const BookStore = [
 
 app.use(express.json()); // for post
 
+// **** sabko function socho and work karo
 app.get("/book",(req,res)=>{
     res.send(BookStore);
 })
