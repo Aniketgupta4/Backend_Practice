@@ -7,7 +7,6 @@
 const express = require("express")
 const app = express(); 
 
-
 const BookStore = [
     {id:1,name:"Harry Potter",author:"devplus"},
     {id:2,name:"friends",author:"vikas"},
@@ -79,5 +78,6 @@ app.listen(3000,()=>{
     console.log("server is listening on port 3000");
 
 })
+
 
 
