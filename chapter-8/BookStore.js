@@ -27,7 +27,6 @@ app.get("/book/:id",(req,res)=>{
    res.send(Book)
 })
 
-
 app.post("/book",(req,res)=>{
     console.log(req.body)
     BookStore.push(req.body)
@@ -78,6 +77,7 @@ app.listen(3000,()=>{
     console.log("server is listening on port 3000");
 
 })
+
 
 
 
