@@ -20,7 +20,6 @@ app.get("/book",(req,res)=>{
     res.send(BookStore);
 })
 
-
 app.get("/book/:id",(req,res)=>{
    const id = parseInt(req.params.id); // as a string ayega pasreint use karo
    const Book = BookStore.find(info=>info.id==id);
@@ -77,6 +76,7 @@ app.listen(3000,()=>{
     console.log("server is listening on port 3000");
 
 })
+
 
 
 
