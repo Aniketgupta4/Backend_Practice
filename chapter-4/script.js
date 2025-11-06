@@ -5,7 +5,7 @@
 // 1) data req karega is client and jo response dega is server
 
 //          client                server
-//        request  ------------->   response
+//        request  <------------->   response
 
 
 // server hardware or software hota hai jo request ko process karta hai aur response bhejta hai

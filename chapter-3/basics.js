@@ -6,7 +6,7 @@
 //       //  //////        //                     // FILE    //
 //       //                //                     /////////////     
 //       ////////////////////
-// 
+//   
 //        
 //        -> ** js ko ni pta how to implement -> settimeout , setinterval , fetch -> so we don't have Timer access(settimeout setinterval nikalte hai) , file access ni kar shakte by js , network access ni kar shakte by js can't fetch data , db se connection ni bana shakte -> manage by os
 //        -> **** node ke pass v8 bs hai os access ka tarika ni hai ->  
