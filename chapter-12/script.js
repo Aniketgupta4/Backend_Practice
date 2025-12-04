@@ -82,3 +82,43 @@
 //              -> leaf node pe hi saara data store hota h -> sequential access fast hota h
 
 
+
+
+// -------------- class - 13 --------------
+
+
+// -> why we not take avl tree for indexing ?
+// -> image10 -> avl tree me har node pe 2 hi children hote h -> so height zyada ho jata h -> height zyada hone se search me time complexity badh jata h 
+// -> maintain pointer left right data and self address -> total 4 pointers lagega -> space jyada lagega
+// -> insertion and deletion me rotation karna padta h -> 0(logn) time complexity lagta h -> so insertion and deletion me time jyada lagega
+// -> ****image11 -> basically harddisk pe bohot sare tracks hote hai and sector hote hai v space wale -> so har block pe multiple data store kar sakte h -> and data store hai konse sector ke konse track pe hai and all are of same same size 
+//            -> inka bhi wo hota hai ki 1 baar mai 1 block of data read karta hai and iska(block) size 2kb 4kb hota hai and isko ram pe le jate hai and read karte hai -> ****block pe hi read karte hai ayse hi read ni kar pate 1 line 2 line thik 
+//            -> same for write block pe write karta hai 1 2 line ni karta hai 
+// -> **** block size of 4 kb
+
+// -> **** bacially avl tree ke node ka read karne ke liye data block ke form pe ram pe lana hoga and 1 block size is 4kb where 1 node size of avl tree is about 40byte -> beacuse avl node store self address left right value -> and 1 baar mai 40 byte read out ni kar shakta -> so mai 1 kaam karu 1 node pe multiple entries kar lu see image11 so jab 1 block ko read karra hu so multiple node ko read karlu
+//           -> ye is liye karray hai beacuse 40byte is less and 4kb block size jyada so baki ka space waste jayega in block so -> or nodes ko bhi 1 saath hi read karlu in a block jitne nodes aa jaye
+
+
+// **** and b+ tree pe multiple entries aa jati hai ek sath -> see image12 -> so 1 block ka size jitna 1 node ka size hota hai and multiple data(values) aa jate h -> so 1 block read karne pe multiple nodes read ho jate h -> so searching fast ho jata h -> so b+ tree use karte h indexing ke liye
+// **** bascially in avl tree 1 node me 1 value hota h -> so 1 block me kam hi nodes aa pate h -> so searching slow ho jata h -> wastage of memory so b+ tree use karte h indexing ke liye 
+// **** b+ tree -> 1 node me multiple values hota h -> so 1 block me jyada nodes aa jate h so 1 baar mai multiple data read kar lete hai -> so searching fast ho jata h 
+
+// image13 -> b+ tree pe store kaise hota hai
+// b+ tree -> have internal nodes and leaf nodes -> harddisk hai where actual data stores -> leaf nodes me actual data store hota hai -> leaf nodes me data sorted form me store hota h -> so sequential access fast hota h -> internal nodes me sirf keys store hota h -> internal nodes me keys sorted form me store hota h -> internal nodes me keys ke through hi hum leaf nodes tak pahuchte h -> internal nodes me keys ka use searching ke liye karte h -> internal nodes me keys ka use leaf nodes tak pahuchte h -> leaf nodes me actual data store hota h -> so searching fast hota h
+// **** leaf node ke pass wo pointer hota hai jo actual data ko point karta hai in harddisk me -> so leaf node se actual data ko access karte h
+// -> internal nodes me keys ka use searching ke liye karte h -> internal nodes me keys ka use leaf nodes tak pahuchte h -> leaf nodes me actual data store hota h -> so searching fast hota h
+// -> in b+ tree let 3-(n) value hai so 4-(n+1) pointers hongai -> left , mid , right , self address -> so total 4 pointers hongai -> so space kam lagega -> so b+ tree use karte h indexing ke liye
+// -> **** leaf nodes se ssd pe direct data access karte hai -> so leaf node pe hi saara data store hota h -> sequential access fast hota h -> leaf node of b+ tree is sorted form me hota h
+
+// -> so b+ tree 0(logn) use karte h -> b+ tree me har node pe multiple children hote h -> so height kam ho jata h -> height kam hone se search fast ho jata h -> so b+ tree use karte h indexing ke liye
+// **** -> leaf node pe hi saara data store hota h -> sequential access fast hota h -> leaf node of b+ tree is sorted form me hota h
+
+// -> see image14 -> b+ tree example 
+// -> and 1 block(4kb) ko read karta hai 1 block pe multiple nodes aa jate h -> so range query fast ho jata hai -> ex -> find data 20 to 28 -> so leaf node pe jaake 20 se 28 tak data read kar leta h -> so range query fast ho jata h so (---->) leaf node wala pointer is imp**** linearly data mil jata hai sabka
+
+// image15 -> last nodes of b+ tree work like linkedlist -> 
+//         -> sirf 1 ka address store karte hai and next wale next ka address store karke rakhte hai -> ayse hi b+ tree pe working hota hai like a linkedlist -> so range query fast ho jata h
+
+// **** -> so b+ tree indexing ke liye best h -> so mongodb me b+ tree use karte h indexing ke liye
+
