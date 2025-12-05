@@ -1,6 +1,3 @@
-// -> mongodb+srv://aniket:aniket@coderarmy.cobyls8.mongodb.net/
-
-
 // 1) mongodb installation
 
 
