@@ -2,12 +2,7 @@
 const express = require("express")
 const app = express()
 const main = require("./dbconnection");
-const User = require("./Models/schema");
-const validateuser = require("./utils/validateuser")
-const bcrypt = require("bcrypt")
 const cookieParser = require("cookie-parser")
-const jwt = require("jsonwebtoken")
-const userauth = require("./middleware/userauth")
 require('dotenv').config()
 const authRouter = require("./routes/auth");
 const userRouter = require("./routes/user");
