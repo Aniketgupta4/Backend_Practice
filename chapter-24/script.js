@@ -59,4 +59,5 @@
 // -> image8 (last 1 hour pe dekhta hai) -> so isme ab wo wali problem solve hogyi ki -> user ne agar 12:59 tk 59 req mari so ab 1:59 tk sirf 1 req mar shake -> window slide hogi and jab 1:59 se jyada ho jayega tab ab phir se ye 60 req mar shakta hai in next 1 hour 
 // -> implement this by redis -> redis se easily ho jayega    
 
+// ****** ip pe bhi dikkat hai ki ex -> college ke wifi connect kare hai 100 bacche and sabka ip same hoga kyuki sabne wifi connect kiya hai toh wifi ka ip hoga so 1 hour mai sirf 60 bacche hi req send kar payegai and baki ke bacche req ni kar payegai  
 
