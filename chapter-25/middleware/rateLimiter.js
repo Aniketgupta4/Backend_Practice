@@ -26,8 +26,37 @@ const redisClient = require("../config/redis");
 // }
 
 
+
 // ratelimiter -> by sliding window
 
+const windowsize = 3600;  // total time 60 min
+const maxrequest = 60 ;
+
+const rateLimiter = async (req,res,next) => {
+   try{
+      const key = `IP${req.ip}`;
+      const current_time = Date.now()/1000;  // get time in ms
+      const window_time = current_time - windowsize; // itne wale time se pehle sabko hatana hai
+      
+      await redisClient.zRemRangeByScore(key,0,window_time) // range ki 0 se max size tk of window sabko hata do
+      
+      const numberofreq = await redisClient.zCard(key); // kitni req bachi hai ab
+      if(numberofreq>=maxrequest){
+         throw new Error("number of request excedded");
+      }
+
+      await redisClient.zAdd(key,[{score:current_time,value:`${current_time}:${Math.random()}`}]) // or use crypto library too
+      // request is added
+
+      // key ttl hai unko increase karna jaise key ayegi -> apan inc karte jayengai next 1 ghante ke liye -> ex -> 12:59 pe total req = 58 so ab ye set karenga ki 1:59 tk sief 2 hi req bs kar shakta hai 
+      await redisClient.expire(key,windowsize);
+
+      next();
+      
+   }catch(err){
+      console.log(err.mesage)
+   }
+}
 
 
 
