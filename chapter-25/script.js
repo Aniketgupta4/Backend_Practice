@@ -99,3 +99,4 @@
 
 
 // ----------> image1 -> ***** khud ka random number generator bana lo -> take 1 tank with fishes and one high quality camera -> so jab random number chaiye click one photo and store it in db in binary form so hmko har baar random number mil jayega -> kyuki fishes ka moment hoga so har baar photo diff ayegai and store hogi binary in diff diff so we get diff diff random number
+
